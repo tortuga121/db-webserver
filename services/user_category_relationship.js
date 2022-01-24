@@ -4,18 +4,18 @@ const config = require('../config');
 async function getAll(){
   const rows = await db.query(
     `SELECT *
-    FROM trip`
+    FROM user_category_relationship`
   );
   return rows;
 }
 
-async function create(id, name, administrator_id){
+async function create(user_id,category_id){
   const result = await db.query(
-    `INSERT INTO trip 
+    `INSERT INTO user_category_relationship 
     VALUES 
-    (?, ?, ?)`,
+    (?, ?)`,
     [
-      id, name, administrator_id
+      user_id, category_id
     ]
   );
 

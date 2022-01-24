@@ -9,13 +9,13 @@ async function getAll(){
   return rows;
 }
 
-async function create(name,administrator){
+async function create(id,name){
   const result = await db.query(
     `INSERT INTO category 
     VALUES 
     (?,?)`,
     [
-      name, administrator
+      id, name
     ]
   );
 

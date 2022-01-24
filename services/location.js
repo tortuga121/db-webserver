@@ -9,13 +9,13 @@ async function getAll(){
   return rows;
 }
 
-async function create(name,administrator){
+async function create(id, name, address, x, y, administrator_id){
   const result = await db.query(
     `INSERT INTO location 
     VALUES 
     (?,?,?,?,?,?)`,
     [
-      name, administrator
+      id, name, address, x, y, administrator_id
     ]
   );
 

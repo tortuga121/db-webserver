@@ -9,13 +9,13 @@ async function getAll(){
   return rows;
 }
 
-async function create(name,administrator){
+async function create(id, name, password, email){
   const result = await db.query(
     `INSERT INTO user 
     VALUES 
     (?,?,?,?)`,
     [
-      name, administrator
+      id, name, password, email
     ]
   );
 
